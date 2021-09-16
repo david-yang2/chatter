@@ -5,13 +5,13 @@ class Chat < ApplicationRecord
     # belongs to an user
     belongs_to :user,
       primary_key: :id,         # User's id
-      foreign_key: :author_id,  # from Chat's table
+      foreign_key: :author_id,  # from Chat's table, auther_id = user.id
       class_name: :User
 
     # has many likes
     has_many (:likes, {
       primary_key: :id,           # chat's id
-      foreign_key: :chat_id,      # from Like's table
+      foreign_key: :chat_id,      # from Like's table, chat_id = chat.id
       class_name: :Like           
     })
     
