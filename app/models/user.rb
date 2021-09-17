@@ -12,11 +12,11 @@ class User < ApplicationRecord
     
   
     # user has many chats
-    has_many (:chats, {
+    has_many :chats, 
         primary_key: :id, #user's id
         foreign_key: :author_id, #from Chat's table,    author_id = user.id
         class_name: :Chat
-    })
+
     
 
   
