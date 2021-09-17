@@ -1,0 +1,1 @@
+json.extract! chat, :body, :author_id
