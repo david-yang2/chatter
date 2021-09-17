@@ -1,4 +1,5 @@
 import React from "react";
+import { withRouter } from "react-router-dom";
 
 class Session extends React.Component{
     constructor(props){
@@ -28,7 +29,9 @@ class Session extends React.Component{
     // allows user to use default login
     useDemoLogin(){
         this.props.action({username:"David", password:"DavidDemo"})
-        // .then(() => this.props.history.push(`/home`));
+        .then(()=> this.props.history.push(`/home`));
+
+
     }
 
     // remember password validates the length of 6
@@ -41,7 +44,7 @@ class Session extends React.Component{
             display = (
             <div >
                 <div >
-                    <h2 > Create New Account</h2>
+                    <h3 > Create Your Account</h3>
                     <form >
                         <input
                             placeholder="Username:"
@@ -73,7 +76,7 @@ class Session extends React.Component{
             display = (
                 <div>
                     <div>
-                        <h2> Please Login!</h2>
+                        <h3> Please Login!</h3>
                         <form>
                             <input
                                 placeholder="Username:"
@@ -106,4 +109,4 @@ class Session extends React.Component{
     }
 }
 
-export default Session;
+export default withRouter(Session);
