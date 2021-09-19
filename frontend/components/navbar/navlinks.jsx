@@ -4,7 +4,7 @@ import {Link} from "react-router-dom"
 const Navlinks = ({Icon, text}) => {
 
     return(
-        <div className="navlinks">
+        <div className="navoptions">
             <Icon />
             <Link to={{ pathname: `/${text}`}}>{text}</Link>
         </div>

@@ -5,6 +5,7 @@ import Splash from "./splash/splash";
 import ExploreContainer from "./explore/explore_container"
 import HomeContainer from "./home/home_container"
 import LikesContainer from "./likes/likes_container"
+import Footer from "./footer"
 
 
 const App = () => {
@@ -15,6 +16,7 @@ const App = () => {
         <Route path="/home" component={HomeContainer} />
         <Route path="/explore" component={ExploreContainer} />
         <Route path="/likes" component={LikesContainer} />
+        <Route path="/" render={ ( props ) => ( props.location.pathname !== "/") && <Footer /> }/>
 
 
 

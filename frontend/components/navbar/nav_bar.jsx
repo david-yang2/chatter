@@ -25,7 +25,9 @@ class Navbar extends React.Component{
     }
 
     signout(){
-        this.props.logout().then(()=>this.props.history.push('/'))
+        this.props.logout()
+        .then(()=>this.toggleLogout)
+        .then(()=>this.props.history.push('/'))
     }
 
 
@@ -39,25 +41,29 @@ class Navbar extends React.Component{
         let display;
         if (this.state.logoutDisplay === true) {
             display = (<div>
+                <div> Signed in as {this.props.currentUser.username}</div>
                 <button onClick={this.signout}>Log out</button>
             </div>)
         } else {<div></div>}
 
+
         return(
             <div className="navbar">
-                <FiTwitter size={28}/>
-                {/* Home */}    
-                <Navlinks Icon={AiOutlineHome} text={"Home"} />
-                {/* Explore */}   
-                <Navlinks Icon={FaHashtag} text={"Explore"} /> 
-                {/* Likes  */}    
-                <Navlinks Icon={BsBell} text={"Likes"} />
-                {/* Profile  */}    
-                <Navlinks Icon={IoPersonOutline} text={"Profile"} />
+                <div className="navlinks">
+                    <FiTwitter size={28}/>
+                    {/* Home */}    
+                    <Navlinks Icon={AiOutlineHome} text={"Home"} />
+                    {/* Explore */}   
+                    <Navlinks Icon={FaHashtag} text={"Explore"} /> 
+                    {/* Likes  */}    
+                    <Navlinks Icon={BsBell} text={"Likes"} />
+                    {/* Profile  */}    
+                    <Navlinks Icon={IoPersonOutline} text={"Profile"} />
+            
+                    {/* chat button that will create a pop up form */}
+                    <button className="chatbtn"> Chat </button>
+                </div>
 
-
-                {/* chat button that will create a pop up form */}
-                <button className="chatbtn"> Chat </button>
 
                 {/* username */}
                 {/* <h3>{this.props.currentUser}</h3> */}
@@ -65,8 +71,13 @@ class Navbar extends React.Component{
 
 
                 {/* logout section */}
-                {display}
-                <button onClick={this.toggleLogout}><BsThreeDots /></button>
+                <div>
+                    {display}
+                    <button className="sessionBtn" onClick={this.toggleLogout}> 
+                                <div>@{this.props.currentUser.username}</div> 
+                                <BsThreeDots /> 
+                    </button>
+                </div>
                 
 
             </div>

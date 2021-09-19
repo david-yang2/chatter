@@ -1,8 +1,60 @@
 
 
 
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    width:20%;
+    margin-top: 1em;
+}
 
 
-.navlinks > a{
+.chatbtn{
+    width: 100px;
+    height: 30px;
+    background-color: #1DA1F2;
+    color: white;
+    font-size: 16px;
+    border-radius: 15%;
+    align-items: center;
+    border: none;
+    margin-top: 2em
+}
+
+.chatbtn:hover{
+    background-color: #0d99f0;
+}
+
+.navlinks{
+    height: 70%;
+    display:flex;
+    justify-content: flex-start;
+    flex-direction: column;
+
+}
+
+
+.navoptions{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 2em;
+
+}
+
+.navoptions > a{
     text-decoration: none;
+    color:black;
+    padding-left:1em;
+}
+
+
+
+.sessionBtn{
+    display:flex;
+    width:100%;
+    justify-content: space-between;
+    margin-bottom: 1em;
 }
