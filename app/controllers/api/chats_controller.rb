@@ -1,7 +1,9 @@
 class Api::ChatsController < ApplicationController
 
     def index
-        @chats = Chat.all
+        @chats = Chat.includes(:user)
+
+        # render :json => @chats, :include => {:user => {:only => :username}}
     end
 
     def show
