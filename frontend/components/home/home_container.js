@@ -1,19 +1,25 @@
 import {connect} from 'react-redux'
 import Home from "./home"
-import {getChats} from "../../actions/chat_actions"
+import {getChats, createChat} from "../../actions/chat_actions"
 
 
 
 
 const mapStateToProps = state => {
     return {
-        chats: state.chats
+        currentUser: state.session.currentUser,
+        chats: state.chats,
+        newChat: {
+            body: '',
+            author_id: ''
+        }
     }
 }
 
 const mapDispatchToProps = dispatch => {
     return {
-        getChats: () => dispatch(getChats())
+        getChats: () => dispatch(getChats()),
+        createChat: newChat => dispatch(createChat(newChat))
     }
 }
 
