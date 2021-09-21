@@ -1,7 +1,7 @@
 class Api::ChatsController < ApplicationController
 
     def index
-        @chats = Chat.includes(:user)
+        @chats = Chat.includes(:user).order(created_at: :desc)
 
         # render :json => @chats, :include => {:user => {:only => :username}}
     end
@@ -12,9 +12,11 @@ class Api::ChatsController < ApplicationController
 
     def create
         @chat = Chat.new(chat_params)
+        @chats = Chat.includes(:user).order(created_at: :desc)
+        # render :index
         
         if @chat.save
-            render :show
+            render :index
         else 
             render json: @chat.errors.full_messages, status: 422
         end
