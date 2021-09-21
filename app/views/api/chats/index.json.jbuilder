@@ -1,5 +1,5 @@
-@chats.each do |chat|
-  json.set! chat.id do
+
+  json.array! @chats do |chat|
     json.partial! 'chat', chat: chat, user: chat.user
   end
-end
+

@@ -1,1 +1,1 @@
-json.partial! 'chat', chat: @chat
+json.partial! 'chat', chat: @chat, user: @chat.user
