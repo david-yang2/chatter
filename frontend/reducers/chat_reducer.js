@@ -1,5 +1,6 @@
 import {
-    RECEIVE_ALL_CHATS
+    RECEIVE_ALL_CHATS,
+    RECEIVE_ALL_CHAT
 } from '../actions/chat_actions'
 
 
@@ -15,6 +16,8 @@ const ChatsReducer = (oldState ={}, action) => {
     switch (action.type) {
         case RECEIVE_ALL_CHATS:
             return action.chats;
+        case RECEIVE_ALL_CHATS:
+            return action.chat;
         default:
             return oldState
     }
