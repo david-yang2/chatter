@@ -13,10 +13,11 @@ class Api::ChatsController < ApplicationController
     def create
         @chat = Chat.new(chat_params)
         @chats = Chat.includes(:user).order(created_at: :desc)
-        # render :index
-        
         if @chat.save
             render :index
+        
+        # if @chat.save
+        #     render :show
         else 
             render json: @chat.errors.full_messages, status: 422
         end
