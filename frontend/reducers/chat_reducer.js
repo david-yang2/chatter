@@ -1,6 +1,6 @@
 import {
     RECEIVE_ALL_CHATS,
-    RECEIVE_ALL_CHAT
+    RECEIVE_CHAT
 } from '../actions/chat_actions'
 
 
@@ -15,8 +15,13 @@ const ChatsReducer = (oldState ={}, action) => {
 
     switch (action.type) {
         case RECEIVE_ALL_CHATS:
-            return action.chats;
-        case RECEIVE_ALL_CHATS:
+            // sort chats by created_at date (newest first)
+            nextState = Object.values(action.chats).sort(function(a,b){
+                return new Date(b.created_at) - new Date(a.created_at)})
+
+            return nextState
+
+        case RECEIVE_CHAT:
             return action.chat;
         default:
             return oldState
