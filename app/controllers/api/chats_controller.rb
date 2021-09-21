@@ -23,6 +23,21 @@ class Api::ChatsController < ApplicationController
         end
     end
 
+    def filter
+        # @chats = Chat.includes(:user).where(topic: "Finance")
+        @chats = Chat.includes(:user).where(topic: "Sports")
+
+        # Author.includes(:books).where(books: { out_of_print: true })
+        render :index
+
+    end
+    
+    def search
+        @chats = Chat.includes(:user).where(topic: "Finance")
+        render :index
+
+    end
+
     def update
         @chat = Chat.find(params[:id])
 
@@ -44,6 +59,6 @@ class Api::ChatsController < ApplicationController
     
     private
     def chat_params
-        params.require(:chat).permit(:body, :author_id)
+        params.require(:chat).permit(:body, :author_id, :topic)
     end
 end
