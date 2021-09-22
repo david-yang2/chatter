@@ -5,12 +5,11 @@ import {search} from "../../actions/chat_actions"
 
 const mapStateToProps = state => {
     return{
-        chats: state.chats
+        chats: state.chats,
     }
 }
 
 const mapDispatchToProps = dispatch => {
-    debugger
     return {
         search: term => dispatch(search(term))
     }

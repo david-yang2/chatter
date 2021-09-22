@@ -23,7 +23,6 @@ export const postTopic = topic => {
 }
 
 export const postSearch = term => {
-    debugger
     return $.ajax({
         url:`/api/search`,
         method: "POST",

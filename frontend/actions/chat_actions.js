@@ -37,7 +37,6 @@ export const filterChats = topic => dispatch => {
 }
 
 export const search = term => dispatch => {
-    debugger
     return ChatApiUtil.postSearch(term)
     .then(searchResult => dispatch(receiveChats(searchResult)))
 }

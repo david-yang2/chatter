@@ -4,23 +4,41 @@ import React from 'react'
 class Footer extends React.Component{
     constructor(props){
         super(props)
+        this.state={
+            searchTerm: ""
+        }
 
         this.processSearch = this.processSearch.bind(this)
 
     }
 
-    processSearch(term){
-        debugger
-        this.props.search(term)
+    update(field){
+   
+        return e => {
+    
+          this.setState({[field]: e.currentTarget.value});
+        }
     }
 
+    processSearch(){
+        this.props.search(this.state.searchTerm)
+    }
+
+
+    
 
     render(){
         return(
             <div className="footer" >
+                <form onSubmit={this.processSearch}>
+                    <input  type="text"
+                            placeholder="Search"
+                            value={this.state.searchTerm}
+                            onChange={this.update('searchTerm')}
+                    />
+                </form>
 
-                <h3>search bar</h3>
-                <button onClick={() => this.processSearch("million")}> search</button>
+                {/* <button onClick={() => this.processSearch("million")}> search</button> */}
                 <h3> What's Trending? </h3>
                 <h5>ExplorationAwaits</h5>
                 <h5>What's For Dinner?</h5>
