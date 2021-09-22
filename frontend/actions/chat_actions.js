@@ -1,19 +1,19 @@
 
 import * as ChatApiUtil from "../util/chat_api_util"
 
-
-
 export const RECEIVE_ALL_CHATS = "RECEIVE_ALL_CHATS"
 export const RECEIVE_CHAT = "RECEIVE_CHAT"
 
 
-const receiveChats = chats => ({
-    type: RECEIVE_ALL_CHATS,
-    chats
-})
+const receiveChats = chats => {
+    return {
+        type: RECEIVE_ALL_CHATS,
+        chats
+    }
+}
+
 
 const receiveChat = chat => {
-    debugger
     return {
     type: RECEIVE_CHAT,
     chat}
@@ -27,7 +27,11 @@ export const getChats = () => dispatch => {
 
 
 export const createChat = newChat => dispatch => {
-    debugger
     return ChatApiUtil.postChat(newChat)
-    .then(newChatAdded => dispatch(receiveChats(newChatAdded)))
+    .then(newChat => dispatch(receiveChat(newChat)))
+}
+
+export const filterChats = topic => dispatch => {
+    return ChatApiUtil.postTopic(topic)
+    .then(filteredChat => dispatch(receiveChats(filteredChat)))
 }
