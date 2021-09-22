@@ -7,9 +7,10 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: {format: :json} do
 
-    get "/explore",   to: "chats#getfilter"
-    post "/explore",   to: "chats#filter"
-    get "/search",    to:"chats#search"
+    get "/explore",     to: "chats#getfilter"
+    post "/explore",    to: "chats#filter"
+    get "/search",      to: "chats#getSearch"
+    post "/search",     to: "chats#search"
 
     resources :chats 
     resources :users
