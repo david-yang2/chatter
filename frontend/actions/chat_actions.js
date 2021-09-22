@@ -35,3 +35,9 @@ export const filterChats = topic => dispatch => {
     return ChatApiUtil.postTopic(topic)
     .then(filteredChat => dispatch(receiveChats(filteredChat)))
 }
+
+export const search = term => dispatch => {
+    debugger
+    return ChatApiUtil.postSearch(term)
+    .then(searchResult => dispatch(receiveChats(searchResult)))
+}
