@@ -50,7 +50,7 @@ class Api::ChatsController < ApplicationController
     
     def search
 
-        @chats = Chat.where("body like ?", "%#{params[:search]}%")
+        @chats = Chat.where("body like ?", "%#{params[:search]}%").order(created_at: :desc)
         render :index
 
     end
