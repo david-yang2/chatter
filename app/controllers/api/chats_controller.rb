@@ -42,9 +42,15 @@ class Api::ChatsController < ApplicationController
         # @chats = Chat.includes(:user).where(topic: "Finance")
         # Author.includes(:books).where(books: { out_of_print: true })
     end
+
+    def getSearch
+        @chats = Chat.all
+        render :index
+    end
     
     def search
-        @chats = Chat.includes(:user).where(topic: "Finance")
+
+        @chats = Chat.where("body like ?", "%#{params[:search]}%")
         render :index
 
     end
