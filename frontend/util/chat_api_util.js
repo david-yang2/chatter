@@ -21,3 +21,12 @@ export const postTopic = topic => {
         data: {filteredChat: topic}, 
     })
 }
+
+export const postSearch = term => {
+    debugger
+    return $.ajax({
+        url:`/api/search`,
+        method: "POST",
+        data: {search: term}, 
+    })
+}
