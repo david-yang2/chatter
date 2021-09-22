@@ -23,13 +23,24 @@ class Api::ChatsController < ApplicationController
         end
     end
 
-    def filter
-        # @chats = Chat.includes(:user).where(topic: "Finance")
-        @chats = Chat.includes(:user).where(topic: "Sports")
 
-        # Author.includes(:books).where(books: { out_of_print: true })
+    def getfilter
+        @chats = Chat.includes(:user).order(created_at: :desc)
+        render :index
+    end
+
+    def filter
+
+        if (params[:filteredChat].length < 1)
+            @chats = Chat.includes(:user).order(created_at: :desc)
+        else 
+            @chats = Chat.joins(:user).order(created_at: :desc).where(topic: params[:filteredChat])
+        end
+
         render :index
 
+        # @chats = Chat.includes(:user).where(topic: "Finance")
+        # Author.includes(:books).where(books: { out_of_print: true })
     end
     
     def search
