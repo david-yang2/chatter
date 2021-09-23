@@ -31,13 +31,15 @@ class Api::UsersController < ApplicationController
     
     def show
       @user = selected_user
+      @chats = @user.chats
     end
 
     #show current user's chats and likes
     def index
         @user = User.find(current_user.id)
-        @chats = @user.chats
-        render `ap/users/index`
+        @chats = @user.chats.includes(:user)
+        @likes = @user.likes.includes(:chat)
+        render :index
 
     end
 
