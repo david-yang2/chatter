@@ -11,9 +11,11 @@ Rails.application.routes.draw do
     post "/explore",    to: "chats#filter"
     get "/search",      to: "chats#getSearch"
     post "/search",     to: "chats#search"
+    get "/liked",       to: "likes#userLiked"
 
     resources :chats 
     resources :users
+    resources :likes
     resource :session, only: [:new, :create, :destroy]
 
   end
