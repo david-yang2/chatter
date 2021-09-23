@@ -76,6 +76,6 @@ class Api::ChatsController < ApplicationController
     
     private
     def chat_params
-        params.require(:chat).permit(:body, :author_id, :topic)
+        params.require(:chat).permit(:body, :author_id, :topic, :id)
     end
 end
