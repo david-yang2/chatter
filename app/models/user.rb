@@ -17,10 +17,13 @@ class User < ApplicationRecord
         foreign_key: :author_id, #from Chat's table,    author_id = user.id
         class_name: :Chat
 
-    
 
-  
-  
+    has_many :likes,
+        primary_key: :id,
+        foreign_key: :user_id,
+        class_name: :Like
+
+
     # Class method for finding a user ONLY if we have the correct username and password
     # only return a user if the username/password is correct
     # Class method for finding a user ONLY if we have the correct username and password
