@@ -1,7 +1,7 @@
-import * as UserApiUtil from '../utils/user_api_util'
+import * as UserApiUtil from '../util/user_api_util'
 
 
-const RECEIVE_USER = "RECEIVE_USER"
+export const RECEIVE_USER = "RECEIVE_USER"
 
 const receiveUser = user => {
     return{
@@ -11,7 +11,7 @@ const receiveUser = user => {
 
 }
 
-export const getUser = () => {
+export const getUser = () => dispatch => {
     return UserApiUtil.fetchUser()
     .then(user => dispatch(receiveUser(user)))
-} 
+};
