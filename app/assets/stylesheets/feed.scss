@@ -1,11 +1,51 @@
 
 
+.feed{
+    width:100%;
+    padding: 1% 2% 1% 2%;
+    border-style: solid;
+    border-color: grey; 
+    display: flex;
+    flex-direction: column
+}
+
+.feedHeader{
+    width:100%;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.userInfo{
+    width: 85%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.avatar{
+    width:15%
+}
+
+.followBtn{
+    width:15%;
+
+}
+.feedContent{
+    padding-left: 13%;
+}
+
+
+
+
+
+
 
 .followContainer{
     position:relative;
     top: -23px;
-    width: 250px;
-    height: 100px;
+    width: 150px;
+    height: 35px;
     background-color: lightgrey;
     display: flex;
     align-items: center
@@ -13,5 +53,5 @@
 
 .followContainer > button{
     width: 100px;
-    margin-left: 75px
+    margin-left: 25px
 }
