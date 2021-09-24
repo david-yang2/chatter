@@ -1,0 +1,17 @@
+
+
+
+.followContainer{
+    position:relative;
+    top: -23px;
+    width: 250px;
+    height: 100px;
+    background-color: lightgrey;
+    display: flex;
+    align-items: center
+}
+
+.followContainer > button{
+    width: 100px;
+    margin-left: 75px
+}
