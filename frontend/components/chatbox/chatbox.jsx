@@ -22,30 +22,33 @@ class Chatbox extends React.Component{
       }
     }
   
-    handleSubmit(){
-      this.props.submitChat(this.state)
-      // .then(this.setState({body: ""})) => submitChat does not return anything?
+    handleSubmit(e){
+      e.preventDefault();
+      this.props.submitChat(this.state);
+      !this.props.toggleChat ? null : this.props.toggleChat(false,e)
     }
-
 
   render (){
 
     let chatboxOrigin;
+    let handleEvent;
 
     if (this.props.chatboxRequest === "navbar") {
-      chatboxOrigin = "navbarChat"
+      chatboxOrigin = "navbarChat";
+      handleEvent = (<input onClick={(e) => this.props.toggleChat(false,e)} type="submit" value="Chat"/>)
     } else if (this.props.chatboxRequest === "home") {
       chatboxOrigin = "homeChat"
+      handleEvent = (<input type="submit" value="Chat" />)
     }
-    
+
     return(
-      <form className={chatboxOrigin} onSubmit={this.handleSubmit}>
+      <form className={chatboxOrigin} onSubmit={(e) => this.handleSubmit(e)}>
           <textarea
             placeholder="What's happening?"
             value={this.state.body}
             onChange={this.update('body')}
           />
-        <input type="submit" value="Chat" />
+          {<input type="submit" value="Chat" />}
       </form>
     );
   }
