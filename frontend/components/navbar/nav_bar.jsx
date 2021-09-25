@@ -32,24 +32,22 @@ class Navbar extends React.Component{
         .then(()=>this.props.history.push('/'))
     }
 
-
     toggleLogout(){
         // if true show logout div
         this.setState({logoutDisplay : !this.state.logoutDisplay})
 
     }
 
-    toggleChat(bool){
+    toggleChat(bool, e){
+        e.stopPropagation();
         this.setState({chatDisplay: bool})
     }
-
 
     submitChat(newChat){
         newChat.author_id = this.props.currentUser.id
         this.props.createChat(newChat)
 
     }
-
 
     render(){
 
@@ -62,25 +60,19 @@ class Navbar extends React.Component{
             </div>)
         } else {<div></div>}
 
-
-
         let chatdisplay;
 
         if (this.state.chatDisplay === true) {
             // document.getElementById("app").style.opacity="0.5"
             modalClass = "chatmodalOpen"
-            chatdisplay = (<div className="navChatBox">
-                                <div> 
-                                    <Chatbox newChat={this.props.newChat}
-                                                submitChat={this.submitChat}/>
-                                </div>
-                                <button onClick={() => this.toggleChat(false)}>x</button>
+            chatdisplay = (<div onClick={(e) => this.toggleChat(true,e)} className="navChatBox">
+                                <button onClick={(e) => this.toggleChat(false,e)}>x</button>
+                                <Chatbox newChat={this.props.newChat}
+                                            submitChat={this.submitChat}
+                                            chatboxRequest="navbar" />
+                                
                             </div>)
-            debugger
-
-
         } else {<div></div>}
-
 
         return(
             <div className="navbar">
@@ -96,19 +88,16 @@ class Navbar extends React.Component{
                     <Navlinks Icon={IoPersonOutline} text={"Profile"} />
             
                     {/* chat button that will create a pop up form */}
-                    <button onClick={()=>this.toggleChat(true)}className="chatbtn"> Chat </button>
-                    <div className={modalClass}>
+                    <button onClick={(e)=>this.toggleChat(true,e)}className="chatbtn"> Chat </button>
+                    <div className={modalClass} onClick={(e) => this.toggleChat(false,e)}>
                         {chatdisplay}
                     </div>
                     {/* {chatdisplay} */}
 
                 </div>
 
-
                 {/* username */}
                 {/* <h3>{this.props.currentUser}</h3> */}
-
-
 
                 {/* logout section */}
                 <div>
