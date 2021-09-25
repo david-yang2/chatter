@@ -17,6 +17,7 @@
 *{
    background-color: black;
    color: white;
+   /* margin-top: 0.25em; */
 }
 
  .app{
@@ -45,10 +46,30 @@
 
  .home, .explore, .profile {
       width:50%;
+      padding-top: 0.5em;
+      border: solid;
+      border-width: 0 1px 0 1px;
+      border-color: red grey white grey;
+      overflow: scroll;
+ }
+
+ .home > h3 {
+   margin-left:0.75em;
+   margin-top:0em;
+
+ }
+ .explore > h3 {
+   margin-left:0.75em;
+   margin-top:0em;
+ }
+ .profile > h3 {
+   margin-left:0.75em;
+   margin-top:0em;
  }
 
  button {
    background: transparent;
    border: none !important;
-   color: grey
+   color: grey;
+   cursor: pointer;
 }
