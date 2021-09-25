@@ -3,6 +3,9 @@
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
+    border:solid;
+    border-width: 1px 0 0 0;
+    border-color: gray
 }
 
 .userAvatar{
@@ -15,21 +18,28 @@
     display: flex;
     flex-direction: column;
     background-color: black;
-    height:56px;
+    height:100px;
 }
 
 .homeChat > textarea{
     border: none;
     border-bottom: gray;
-    width:100%;
+    width:95%;
+    height:80%; 
     border-left:none;
     border-right:none;
+    font-size: 18px;
+    padding-left: 10px;
+    padding-top: 10px;
+    outline: none;
 }
 
 .homeChat > input{
     width: 15%;
-    margin-left: 80%;
+    margin-left: 78%;
     background-color: #1DA1F2;
+    border-radius: 15%;
+    box-sizing: initial !important;
 }
 
 
