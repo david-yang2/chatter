@@ -24,6 +24,7 @@ class Navbar extends React.Component{
         this.signout = this.signout.bind(this)
         this.toggleLogout = this.toggleLogout.bind(this)
         this.submitChat = this.submitChat.bind(this)
+        this.toggleChat = this.toggleChat.bind(this)
     }
 
     signout(){
@@ -35,7 +36,6 @@ class Navbar extends React.Component{
     toggleLogout(){
         // if true show logout div
         this.setState({logoutDisplay : !this.state.logoutDisplay})
-
     }
 
     toggleChat(bool, e){
@@ -46,13 +46,12 @@ class Navbar extends React.Component{
     submitChat(newChat){
         newChat.author_id = this.props.currentUser.id
         this.props.createChat(newChat)
-
     }
 
     render(){
-
         let modalClass = "chatmodal"
         let logoutdisplay;
+
         if (this.state.logoutDisplay === true) {
             logoutdisplay = (<div>
                 <div> Signed in as {this.props.currentUser.username}</div>
@@ -69,7 +68,8 @@ class Navbar extends React.Component{
                                 <button onClick={(e) => this.toggleChat(false,e)}>x</button>
                                 <Chatbox newChat={this.props.newChat}
                                             submitChat={this.submitChat}
-                                            chatboxRequest="navbar" />
+                                            chatboxRequest="navbar" 
+                                            toggleChat={this.toggleChat}/>
                                 
                             </div>)
         } else {<div></div>}
