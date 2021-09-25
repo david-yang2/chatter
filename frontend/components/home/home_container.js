@@ -1,9 +1,7 @@
 import {connect} from 'react-redux'
 import Home from "./home"
 import {getChats, createChat} from "../../actions/chat_actions"
-
-
-
+import {createLike} from "../../actions/like_actions"
 
 const mapStateToProps = state => {
     return {
@@ -19,7 +17,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return {
         getChats: () => dispatch(getChats()),
-        createChat: newChat => dispatch(createChat(newChat))
+        createChat: newChat => dispatch(createChat(newChat)),
+        createLike: likeChat => dispatch(createLike(likeChat))
     }
 }
 

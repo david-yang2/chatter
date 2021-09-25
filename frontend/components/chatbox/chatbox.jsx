@@ -6,6 +6,10 @@ class Chatbox extends React.Component{
     constructor(props){
         super(props)
         this.state = this.props.newChat
+        // this.state={
+        //   body: "",
+        //   author_id: ""
+        // }
         this.handleSubmit = this.handleSubmit.bind(this);
     }
   
@@ -19,14 +23,23 @@ class Chatbox extends React.Component{
     }
   
     handleSubmit(){
-  
       this.props.submitChat(this.state)
+      // .then(this.setState({body: ""})) => submitChat does not return anything?
     }
 
 
   render (){
+
+    let chatboxOrigin;
+
+    if (this.props.chatboxRequest === "navbar") {
+      chatboxOrigin = "navbarChat"
+    } else if (this.props.chatboxRequest === "home") {
+      chatboxOrigin = "homeChat"
+    }
+    
     return(
-      <form onSubmit={this.handleSubmit}>
+      <form className={chatboxOrigin} onSubmit={this.handleSubmit}>
           <textarea
             placeholder="What's happening?"
             value={this.state.body}

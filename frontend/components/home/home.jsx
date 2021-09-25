@@ -11,6 +11,7 @@ class Home extends React.Component{
         super(props)
     
         this.submitChat = this.submitChat.bind(this)
+        this.likeChat = this.likeChat.bind(this)
     }
 
 
@@ -18,29 +19,40 @@ class Home extends React.Component{
         this.props.getChats()
     }
 
+
     submitChat(newChat){
         newChat.author_id = this.props.currentUser.id
         this.props.createChat(newChat)
+
+    }
+
+    likeChat(chatId){
+        this.props.createLike({user_id: this.props.currentUser.id,
+                                chat_id: chatId })
     }
 
     render(){
         if (!this.props.chats) return null
 
         const {chats} = this.props
-        
-        debugger
         return(
-            <div>
+            <div className="home">
                 <h3>Home</h3>
-                {/* create form to post a new chat */}
-                <Chatbox newChat={this.props.newChat}
-                         submitChat={this.submitChat}/>
+                <div className="userChatbox">
+                    <div className="userAvatar"> 
+                        avatar
+                    </div>
+                    {/* create form to post a new chat */}
+                    <Chatbox newChat={this.props.newChat}
+                            submitChat={this.submitChat}
+                            chatboxRequest="home"/>
 
-
+                </div>
+                
                 {/* fetch and render all chats */}
-                {Object.values(chats).map((chat,idx) => <Feed key={idx} chat={chat} />)}
-
-
+                {Object.values(chats).map((chat,idx) => <Feed key={idx} 
+                                                                chat={chat}
+                                                                likeChat={this.likeChat} />)}
 
             </div>
         )

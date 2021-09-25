@@ -1,35 +1,44 @@
 
+.userChatbox{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
 
+.userAvatar{
+    width:15%;
 
-.chatbox{
+}
+
+.homeChat{
     width:100%;
     display: flex;
     flex-direction: column;
     background-color: black;
+    height:56px;
 }
 
-.chatbox > textarea{
+.homeChat > textarea{
     border: none;
     border-bottom: gray;
+    width:100%;
+    border-left:none;
+    border-right:none;
 }
 
-.chatbox > input{
-    width: 10%;
-    margin-left: 85%;
+.homeChat > input{
+    width: 15%;
+    margin-left: 80%;
     background-color: #1DA1F2;
 }
 
 
-.chatdisplay{
-    position:absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    width: 200px;
-    height: 200px
-}
-
-.navChatBox{
-    opacity: 1;
-}
+// .chatdisplay{
+//     position:absolute;
+//     left: 0;
+//     right: 0;
+//     top: 0;
+//     bottom: 0;
+//     width: 200px;
+//     height: 200px
+// }
