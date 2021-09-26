@@ -30,6 +30,7 @@ class Session extends React.Component{
     useDemoLogin(){
         this.props.action({username:"David", password:"DavidDemo"})
         .then(()=> this.props.history.push(`/home`));
+        // this.props.history.push(`/home`)
 
 
     }
@@ -100,7 +101,6 @@ class Session extends React.Component{
                 </div>
             )
         }
-
         return(
             <div>
                 {display}
