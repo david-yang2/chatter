@@ -3,6 +3,7 @@ import Link from "react-router-dom"
 import { render } from "react-dom";
 import LoginContainer from "../sessions/login_container"
 import SessionContainer from "../sessions/session_container"
+import { FiTwitter } from "react-icons/fi";
 
 class Splash extends React.Component{
     constructor(props){
@@ -13,6 +14,9 @@ class Splash extends React.Component{
         this.changeForm = this.changeForm.bind(this)
     }
 
+    componentDidMount(){
+        // fetcch all chats
+    }
     changeForm(){
         this.setState({loginForm: !this.state.loginForm})
     }
@@ -22,8 +26,14 @@ class Splash extends React.Component{
     let display;
 
     if (this.state.loginForm === false) {
-        display = <div> <SessionContainer /> </div>
-    } else { display = <div> <LoginContainer /> </div>}
+        display =   <div> 
+                        <SessionContainer /> 
+                        <h5>Already have an account? <a onClick={() => this.changeForm()}>Log in</a></h5>
+                    </div>
+    } else { display =  <div> 
+                        <LoginContainer /> 
+                        <h5>Don't have an account yet? <a onClick={() => this.changeForm()}>Sign up</a></h5>
+                        </div>}
 
     return (
         <div>
@@ -31,6 +41,7 @@ class Splash extends React.Component{
             <div>
 
             </div>
+            <FiTwitter size={32}/>
 
             
             {/* login/signup forms */}
@@ -42,7 +53,7 @@ class Splash extends React.Component{
             
             {/* <LoginContainer /> */}
 
-            <h5>Already have an account? <a onClick={() => this.changeForm()}>test</a></h5>
+            
 
         </div>
     )
