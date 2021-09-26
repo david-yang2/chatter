@@ -10,7 +10,7 @@ import FooterContainer from "./footer/footer_container"
 
 const App = () => {
     return (
-    <div className = 'app'>
+    <div className = 'app' id='app'>
         <Route path="/" render={ ( props ) => ( props.location.pathname !== "/") && <NavbarContainer /> }/>
         <Route exact path="/" component = {Splash} />
         <Route path="/home" component={HomeContainer} />
