@@ -7,7 +7,6 @@ export const fetchLikes = () => {
 
 
 export const postLike = likeParams => {
-    debugger
     return $.ajax({
         url: '/api/likes',
         method: "POST",
