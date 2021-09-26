@@ -3,7 +3,6 @@ import * as LikeApiUtil from "../util/like_api_util"
 export const RECEIVE_ALL_LIKES = "RECEIVE_ALL_LIKES"
 
 const receiveLikes = likes => {
-    debugger
     return {
         type: RECEIVE_ALL_LIKES,
         likes
