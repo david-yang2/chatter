@@ -3,7 +3,7 @@ import  {login} from "../../actions/session_actions";
 import Session from "./session";
 
 
-const mapStateToProps = dispatch => ({
+const mapStateToProps = state => ({
     formContents: {
         username: '',
         password:'',
