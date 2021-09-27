@@ -22,6 +22,7 @@ class Footer extends React.Component{
 
     processSearch(){
         this.props.search(this.state.searchTerm)
+        .then(this.setState({searchTerm: ""}))
     }
 
 
