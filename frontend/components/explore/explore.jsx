@@ -24,8 +24,8 @@ class Explore extends React.Component{
 
         const {chats} = this.props
         return (
-            <div>
-                <h2>explore section</h2>
+            <div className="explore">
+                <h3>Explore</h3>
                 
                 {/* filter based on topics */}
                 <button onClick={()=> this.filterChats("")}>All</button>
