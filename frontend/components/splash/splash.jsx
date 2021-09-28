@@ -28,11 +28,11 @@ class Splash extends React.Component{
     if (this.state.loginForm === false) {
         display =   <div> 
                         <SessionContainer /> 
-                        <h5>Already have an account? <a onClick={() => this.changeForm()}>Log in</a></h5>
+                        <h4>Already have an account? <a onClick={() => this.changeForm()}>Log in</a></h4>
                     </div>
     } else { display =  <div> 
                         <LoginContainer /> 
-                        <h5>Don't have an account yet? <a onClick={() => this.changeForm()}>Sign up</a></h5>
+                        <h4>Don't have an account yet? <a onClick={() => this.changeForm()}>Sign up</a></h4>
                         </div>}
 
     return (
