@@ -43,9 +43,8 @@ class Session extends React.Component{
 
             {/* SIGNUP FORM */}
             display = (
-            <div >
-                <div >
-                    <h3 > Create Your Account</h3>
+                <div className="session-form">
+                    <h1 > Join Chatter today.</h1>
                     <form >
                         <input
                             placeholder="Username:"
@@ -69,15 +68,13 @@ class Session extends React.Component{
                             <button onClick={this.handleSubmit}>Sign Up</button>
                         </div>
                     </form>
-                </div>
-            </div>)
+                </div>)
         } else if (this.props.formType === "login") {
 
             {/* LOGIN FORM */}
             display = (
-                <div>
-                    <div>
-                        <h3> Please Login!</h3>
+                    <div className="session-form">
+                        <h1> Log in to Chatter!</h1>
                         <form>
                             <input
                                 placeholder="Username:"
@@ -98,11 +95,10 @@ class Session extends React.Component{
                             </div>
                         </form>
                     </div>
-                </div>
             )
         }
         return(
-            <div>
+            <div className="session">
                 {display}
             </div>
         )
