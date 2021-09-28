@@ -44,7 +44,7 @@ class Session extends React.Component{
             {/* SIGNUP FORM */}
             display = (
                 <div className="session-form">
-                    <h1 > Join Chatter today.</h1>
+                    <h1>Join Chatter today.</h1>
                     <form >
                         <input
                             placeholder="Username:"
@@ -74,7 +74,7 @@ class Session extends React.Component{
             {/* LOGIN FORM */}
             display = (
                     <div className="session-form">
-                        <h1> Log in to Chatter!</h1>
+                        <h1>Log in to Chatter!</h1>
                         <form>
                             <input
                                 placeholder="Username:"
