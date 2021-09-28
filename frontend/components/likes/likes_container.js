@@ -5,11 +5,11 @@ import Likes from "./likes"
 
 
 const mapStateToProps = state => {
-    return null
+    return {}
 }
 
 const mapDispatchToProps = dispatch => {
-    return null
+    return {}
 }
 
 
