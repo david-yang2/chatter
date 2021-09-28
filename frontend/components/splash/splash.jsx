@@ -45,7 +45,7 @@ class Splash extends React.Component{
                 {/* login/signup forms */}
 
                 <h1> Happening now </h1>
-                <h3> Join Chatter today. </h3>
+                {/* <h2> Join Chatter today. </h2> */}
                 {display}
 
                 
