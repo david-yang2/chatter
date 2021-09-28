@@ -52,11 +52,13 @@ class Navbar extends React.Component{
         let modalClass = "chatmodal"
         let logoutdisplay;
 
+        const {currentUser} = this.props
+
         if (this.state.logoutDisplay === true) {
-            logoutdisplay = (<div>
-                <div> Signed in as {this.props.currentUser.username}</div>
-                <button onClick={this.signout}>Log out</button>
-            </div>)
+            logoutdisplay = (<div className="logoutDisplay">
+                                <div>@{currentUser.username}</div>
+                                <button onClick={this.signout}>Log out @{currentUser.username} </button>
+                            </div>)
         } else {<div></div>}
 
         let chatdisplay;
@@ -103,7 +105,7 @@ class Navbar extends React.Component{
                 <div>
                     {logoutdisplay}
                     <button className="sessionBtn" onClick={() => this.toggleLogout()}> 
-                                <div>@{this.props.currentUser.username}</div> 
+                                <div>@{currentUser.username}</div> 
                                 <BsThreeDots /> 
                     </button>
                 </div>
