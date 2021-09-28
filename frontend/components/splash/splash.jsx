@@ -3,7 +3,7 @@ import Link from "react-router-dom"
 import { render } from "react-dom";
 import LoginContainer from "../sessions/login_container"
 import SessionContainer from "../sessions/session_container"
-import { FiTwitter } from "react-icons/fi";
+import { FaTwitter } from "react-icons/fa";
 
 class Splash extends React.Component{
     constructor(props){
@@ -36,24 +36,21 @@ class Splash extends React.Component{
                         </div>}
 
     return (
-        <div>
-            {/* twitter background */}
+        <div className="splash">
             <div>
+                <FaTwitter size={32} 
+                            style={{color:"white"}} />
 
+                
+                {/* login/signup forms */}
+
+                <h1> Happening now </h1>
+                <h3> Join Chatter today. </h3>
+                {display}
+
+                
+                {/* <LoginContainer /> */}
             </div>
-            <FiTwitter size={32}/>
-
-            
-            {/* login/signup forms */}
-
-            <h1> Happening now </h1>
-            <h3> Join Chatter today. </h3>
-            {display}
-
-            
-            {/* <LoginContainer /> */}
-
-            
 
         </div>
     )
