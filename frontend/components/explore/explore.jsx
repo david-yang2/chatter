@@ -17,20 +17,19 @@ class Explore extends React.Component{
         this.props.filterChats(topic)
     }
 
-
     render(){
-
         if (Object.values(this.props.chats).length <1) return null
 
         const {chats} = this.props
         return (
             <div className="explore">
-                <h3>Explore</h3>
-                
-                {/* filter based on topics */}
-                <button onClick={()=> this.filterChats("")}>All</button>
-                <button onClick={()=> this.filterChats("Sports")}>Sports</button>
-                <button onClick={()=> this.filterChats("Finance")}>Finance</button>
+                <h3>Explore</h3>                
+                <div className="exploreSelections">
+                    {/* filter based on topics */}
+                    <button onClick={()=> this.filterChats("")}>All</button>
+                    <button onClick={()=> this.filterChats("Sports")}>Sports</button>
+                    <button onClick={()=> this.filterChats("Finance")}>Finance</button>
+                </div>
 
                 {/* <Feed /> */}
 
