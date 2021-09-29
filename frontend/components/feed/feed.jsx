@@ -35,10 +35,9 @@ class Feed extends React.Component{
                 {/* avatar, message, likes and replies */}
                 <div className="feedHeader">
                     <div className="userInfo">
-                        <div className="avatar">
-                            <Avatar username={chat.username}/>
-                        </div>
-                        <h5>{chat.username}</h5>
+                        <Avatar username={chat.username}/>
+                        <div style={{fontWeight: 'bold'}}>{chat.username}</div>
+                        <div style={{fontSize:'15px'}}>{new Date(chat.created_at).toDateString()}</div>
                     </div>
                     <div>
                         <button className="followBtn" onClick={(e)=>this.followPopup(true,e)}><BsThreeDots /></button>
@@ -49,7 +48,7 @@ class Feed extends React.Component{
                     {/* content */}
                 <div className="feedContent">
                     <div>{chat.body}</div>
-                    <button onClick={(e)=>this.props.likeChat(chat.id)}><AiOutlineHeart /></button>
+                    <button onClick={(e)=>this.props.likeChat(chat.id)}><AiOutlineHeart size={20}/></button>
                 </div>
             </div>
         )
