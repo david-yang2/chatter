@@ -25,15 +25,12 @@ class Footer extends React.Component{
         .then(this.setState({searchTerm: ""}))
     }
 
-
-    
-
     render(){
         return(
             <div className="footer" >
                 <form onSubmit={this.processSearch}>
                     <input  type="text"
-                            placeholder="Search"
+                            placeholder="Search Chatter"
                             value={this.state.searchTerm}
                             onChange={this.update('searchTerm')}
                     />
