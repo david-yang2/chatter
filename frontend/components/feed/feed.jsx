@@ -1,5 +1,5 @@
 import React from "react"
-
+import Avatar from "../avatar/avatar"
 import { AiOutlineHeart } from "react-icons/ai";
 import { BsThreeDots } from "react-icons/bs";
 
@@ -29,12 +29,15 @@ class Feed extends React.Component{
                             </button>
                         </div>)
         }
+
         return(
             <div onClick={(e)=>this.followPopup(false,e)} className="feed">
                 {/* avatar, message, likes and replies */}
                 <div className="feedHeader">
                     <div className="userInfo">
-                        <div className="avatar">{/* for avatar */}</div>
+                        <div className="avatar">
+                            <Avatar username={chat.username}/>
+                        </div>
                         <h5>{chat.username}</h5>
                     </div>
                     <div>
