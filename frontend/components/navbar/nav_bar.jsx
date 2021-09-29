@@ -2,6 +2,7 @@ import React from 'react'
 import {withRouter} from "react-router-dom"
 import Navlinks from './navlinks'
 import Chatbox from "../chatbox/chatbox"
+import Avatar from "../avatar/avatar"
 
 //Icons from react icons
 import { AiOutlineHome } from "react-icons/ai";
@@ -56,7 +57,10 @@ class Navbar extends React.Component{
 
         if (this.state.logoutDisplay === true) {
             logoutdisplay = (<div className="logoutDisplay">
-                                <div>@{currentUser.username}</div>
+                                <div>
+                                    <Avatar username={currentUser.username}/>
+                                    @{currentUser.username}
+                                </div>
                                 <button onClick={this.signout}>Log out @{currentUser.username} </button>
                             </div>)
         } else {<div></div>}
