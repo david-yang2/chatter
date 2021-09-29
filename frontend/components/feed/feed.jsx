@@ -30,6 +30,16 @@ class Feed extends React.Component{
                         </div>)
         }
 
+
+        // set date and like button to empty div if feed component is within likes component
+        let date, likeButton;
+        if (this.props.origin === "likes") {
+            date = likeButton = (<div></div>)
+        } else {
+            date = <div style={{fontSize:'15px'}}>{new Date(chat.created_at).toDateString()}</div>
+            likeButton = <button onClick={(e)=>this.props.likeChat(chat.id)}><AiOutlineHeart size={20}/></button>
+        }
+
         return(
             <div onClick={(e)=>this.followPopup(false,e)} className="feed">
                 {/* avatar, message, likes and replies */}
@@ -37,7 +47,7 @@ class Feed extends React.Component{
                     <div className="userInfo">
                         <Avatar username={chat.username}/>
                         <div style={{fontWeight: 'bold'}}>{chat.username}</div>
-                        <div style={{fontSize:'15px'}}>{new Date(chat.created_at).toDateString()}</div>
+                        {date}
                     </div>
                     <div>
                         <button className="followBtn" onClick={(e)=>this.followPopup(true,e)}><BsThreeDots /></button>
@@ -48,7 +58,7 @@ class Feed extends React.Component{
                     {/* content */}
                 <div className="feedContent">
                     <div>{chat.body}</div>
-                    <button onClick={(e)=>this.props.likeChat(chat.id)}><AiOutlineHeart size={20}/></button>
+                    {likeButton}
                 </div>
             </div>
         )
