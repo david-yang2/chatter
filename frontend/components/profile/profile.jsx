@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useReducer } from "react"
 import Feed from '../feed/feed'
 
 class Profile extends React.Component{
@@ -49,12 +49,11 @@ class Profile extends React.Component{
         }
 
         return(
-            <div>
-                <div>profile</div>
+            <div className="profile">
+                <h3>{user.username}</h3>
                 <button onClick={() => this.changeDisplay("Chats")}>Chats</button> 
                 <button onClick={() => this.changeDisplay("Likes")}>Likes</button>
                 {display}
-
             </div>
         )
     }

@@ -1,6 +1,7 @@
 import {connect} from "react-redux"
 import Profile from "./profile"
 import {getUser} from "../../actions/user_actions"
+// import {getLikes} from "../../actions/like_actions"
 
 const mapStateToProps = state => {
     return {
@@ -10,7 +11,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        getUser: () => dispatch(getUser())
+        getUser: () => dispatch(getUser()),
     }
 }
 
