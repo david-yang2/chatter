@@ -58,7 +58,6 @@ class Navbar extends React.Component{
         if (this.state.logoutDisplay === true) {
             logoutdisplay = (<div className="logoutDisplay">
                                 <div>
-                                    <Avatar username={currentUser.username}/>
                                     @{currentUser.username}
                                 </div>
                                 <button onClick={this.signout}>Log out @{currentUser.username} </button>
@@ -109,7 +108,8 @@ class Navbar extends React.Component{
                 <div>
                     {logoutdisplay}
                     <button className="sessionBtn" onClick={() => this.toggleLogout()}> 
-                                <div>@{currentUser.username}</div> 
+                                <Avatar username={currentUser.username}/>
+                                <div style={{marginLeft: "5%", marginRight: "30%"}}>@{currentUser.username}</div> 
                                 <BsThreeDots /> 
                     </button>
                 </div>

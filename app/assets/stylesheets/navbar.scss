@@ -47,12 +47,14 @@
 .sessionBtn{
     display:flex;
     width:100%;
-    justify-content: space-between;
+    justify-content: flex-start;
+    align-items: center;
     margin-bottom: 2.5em;
 }
 
 .sessionBtn > div{
     font-size: 18px;
+
 }
 
 .chatmodal{
