@@ -1,7 +1,7 @@
 
 
 
-json.extract! @user, :username, :id, :email
+json.extract! @user, :username, :id, :email, :created_at
 
 
 #iterate through the user's chats
