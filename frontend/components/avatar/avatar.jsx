@@ -20,13 +20,13 @@ class Avatar extends React.Component{
     render(){
 
         // set background color based on first letter of initial
-        const olive = ['A', 'B', 'C', 'Y']                             //"#808000"
-        const aqua = ['D', 'E', 'F']                                   //"#00FFFF"
-        const limegreen = ['G', 'H', 'I']                               //"#32CD32"
-        const orange = ['J', 'K', 'L', "Z"]                            //"#FFA500"
-        const maroon = [ 'M', 'N', 'O']                                //"#800000"
+        const olive = ['G', 'H', 'I']                               //"#808000"
+        const emeraldgreen = ['D', "Z", 'F']                                   //"#00C957"
+        const red =   ['A', 'B', 'C', 'Y']                           //"#CD0000"
+        const orange = ['J', 'K', 'L', "E"]                            //"#FFA500"
+        const maroon =  ['S', 'T', 'U']                                 //"#800000"
         const violet = ['P', 'Q', 'R']                                 //"#D02090"
-        const royalblue = ['S', 'T', 'U']                              //"#4876FF"
+        const royalblue = [ 'M', 'N', 'O']                            //"#4876FF"
         const coral = ['V', 'W', 'X']                                  //"#FF7F50"
 
         const colorHash = {
@@ -34,10 +34,10 @@ class Avatar extends React.Component{
             olive.map(key => [key, "#808000"])
             ),
             ...Object.fromEntries(
-            aqua.map(key => [key, "#00FFFF"])
+            emeraldgreen.map(key => [key, "#00C957"])
             ),
             ...Object.fromEntries(
-            limegreen.map(key => [key, "#32CD32"])
+            red.map(key => [key, "#CD0000"])
             ),
             ...Object.fromEntries(
             orange.map(key => [key, "#FFA500"])
@@ -60,17 +60,18 @@ class Avatar extends React.Component{
         let initials = this.getInitials(this.props.username)
         let avatarColor = colorHash[initials[0]]
         return(
-            <div style={{
-                    backgroundColor: avatarColor,
-                    width: '50px',
-                    height: '50px',
-                    borderRadius: '50%' }} >
+            <div    className = "avatar" 
+                    style={{
+                            backgroundColor: avatarColor,
+                            width: '60px',
+                            height: '60px',
+                            borderRadius: '50%',
+                            textAlign: 'center',
+                            fontSize: '25px'}} >
                 {initials}
             </div>
         )
     }
-
-
 }
 
 
