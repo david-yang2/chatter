@@ -1,5 +1,6 @@
 import React, { useReducer } from "react"
 import Feed from '../feed/feed'
+import Avatar from "../avatar/avatar"
 
 class Profile extends React.Component{
     constructor(props){
@@ -43,16 +44,23 @@ class Profile extends React.Component{
             display = (
                 <div>
                     {Object.values(user.likes).map((likedChat, idx) => <Feed key={idx}
-                                                    chat={likedChat}/>)}
+                                                    chat={likedChat}
+                                                    origin={"likes"}/>)}
                 </div>
             )
         }
 
         return(
             <div className="profile">
-                <h3>{user.username}</h3>
-                <button onClick={() => this.changeDisplay("Chats")}>Chats</button> 
-                <button onClick={() => this.changeDisplay("Likes")}>Likes</button>
+                <div className="profileHeader">
+                    <Avatar username={user.username} origin="profile"/>
+                    <h3>{user.username}</h3>
+                    <div> Joined: {new Date(user.created_at).toLocaleString('default', { month: 'long', year: 'numeric' })} </div>
+                </div>
+                <div className="profileSelections">
+                    <button onClick={() => this.changeDisplay("Chats")}>Chats</button> 
+                    <button onClick={() => this.changeDisplay("Likes")}>Likes</button>
+                </div>
                 {display}
             </div>
         )
