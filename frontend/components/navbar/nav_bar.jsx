@@ -56,11 +56,13 @@ class Navbar extends React.Component{
         const {currentUser} = this.props
 
         if (this.state.logoutDisplay === true) {
-            logoutdisplay = (<div className="logoutDisplay">
-                                <div>
-                                    @{currentUser.username}
+            logoutdisplay = (<div className="logoutContainer">
+                                <div className="logoutDisplay">
+                                    <div>
+                                        @{currentUser.username}
+                                    </div>
+                                    <button onClick={this.signout}>Log out @{currentUser.username} </button>
                                 </div>
-                                <button onClick={this.signout}>Log out @{currentUser.username} </button>
                             </div>)
         } else {<div></div>}
 
