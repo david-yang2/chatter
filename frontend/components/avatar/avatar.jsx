@@ -59,15 +59,25 @@ class Avatar extends React.Component{
         
         let initials = this.getInitials(this.props.username)
         let avatarColor = colorHash[initials[0]]
+        var w, h, fontsize;
+
+        w = h ="60px"
+        fontsize = "25px"
+
+        if (this.props.origin === "profile") {
+            w = h = '100px'
+            fontsize="35px"
+        }
+
         return(
             <div    className = "avatar" 
                     style={{
                             backgroundColor: avatarColor,
-                            width: '60px',
-                            height: '60px',
+                            width: w,
+                            height: h,
                             borderRadius: '50%',
                             textAlign: 'center',
-                            fontSize: '25px'}} >
+                            fontSize: fontsize}} >
                 {initials}
             </div>
         )
