@@ -1,6 +1,7 @@
 import React from "react"
 import Chatbox from "../chatbox/chatbox"
 import Feed from "../feed/feed"
+import Avatar from "../avatar/avatar"
 
 
 
@@ -34,13 +35,13 @@ class Home extends React.Component{
     render(){
         if (!this.props.chats) return null
 
-        const {chats} = this.props
+        const {chats, currentUser} = this.props
         return(
             <div className="home">
                 <h3>Home</h3>
                 <div className="userChatbox">
                     <div className="userAvatar"> 
-                        avatar
+                        <Avatar username={currentUser.username} />
                     </div>
                     {/* create form to post a new chat */}
                     <Chatbox newChat={this.props.newChat}
