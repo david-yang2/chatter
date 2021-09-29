@@ -1,0 +1,17 @@
+
+
+.profileHeader{
+    padding-left:15px
+}
+
+.profileSelections{
+    margin-top: 1em;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.profileSelections > button{
+    border-bottom: 1px solid gray;
+    padding-bottom: 3px;
+    margin-bottom: 5px;
+}

@@ -1,0 +1,13 @@
+
+
+.exploreSelections{
+    margin-top: 1em;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.exploreSelections > button{
+    border-bottom: 1px solid gray;
+    padding-bottom: 3px;
+    margin-bottom: 5px;
+}

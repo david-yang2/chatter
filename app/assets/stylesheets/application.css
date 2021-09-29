@@ -69,13 +69,13 @@
    margin-top:0em;
  }
  .profile > h3 {
-   margin-left:0.75em;
+   /* margin-left:0.75em; */
    margin-top:0em;
  }
 
  button {
    background: transparent;
-   border: none !important;
+   border: none;
    color: grey;
    cursor: pointer;
 }

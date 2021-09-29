@@ -1,3 +1,5 @@
+$radius: 30px;
+
 
 .userChatbox{
     display: flex;
@@ -46,6 +48,10 @@
     background-color: #1DA1F2;
     border-radius: 15%;
     box-sizing: initial !important;
+    border-top-left-radius: $radius $radius ;
+    border-top-right-radius: $radius $radius;
+    border-bottom-left-radius: $radius $radius;
+    border-bottom-right-radius: $radius $radius;   
 }
 
 
