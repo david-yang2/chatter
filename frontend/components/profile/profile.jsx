@@ -36,7 +36,8 @@ class Profile extends React.Component{
             display = (
                 <div>
                     {Object.values(user.chats).map((chat, idx) => <Feed key={idx}
-                                                    chat={chat}/>)}
+                                                    chat={chat}
+                                                    origin={"chats"}/>)}
                 </div>
             )
         } else if (this.state.selected === "Likes") {
