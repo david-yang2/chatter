@@ -35,6 +35,9 @@
 }
 .feedContent{
     padding-left: 13%;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
 }
 
 .feedContent > div{
@@ -43,6 +46,9 @@
 
 .feedContent > button {
     padding: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
 }
 
 .followContainer{

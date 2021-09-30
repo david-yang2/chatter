@@ -32,12 +32,18 @@ class Feed extends React.Component{
 
 
         // set date and like button to empty div if feed component is within likes component
-        let date, likeButton;
-        if (this.props.origin === "likes") {
+        let date, likeButton, numLike;
+        if (this.props.origin === "likes" || this.props.origin === "chats" ) {
             date = likeButton = (<div></div>)
         } else {
+            chat.likedby.length > 1 ? numLike = "likes" : numLike = "like"
             date = <div style={{fontSize:'15px'}}>{new Date(chat.created_at).toDateString()}</div>
-            likeButton = <button onClick={(e)=>this.props.likeChat(chat.id)}><AiOutlineHeart size={20}/></button>
+            likeButton = <button className="likeBtn" onClick={(e)=>this.props.likeChat(chat.id)}><AiOutlineHeart size={20} /> 
+                                                                                                <span style={{paddingLeft: '5px'}}> </span>
+                                                                                                {chat.likedby.length} 
+                                                                                                <span style={{paddingLeft: '5px'}}> </span> 
+                                                                                                {numLike} 
+                                                                                </button>
         }
 
         return(
