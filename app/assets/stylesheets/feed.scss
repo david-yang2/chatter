@@ -65,3 +65,10 @@
     width: 100px;
     margin-left: 25px
 }
+
+.likeSection{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    width:100%;
+}
