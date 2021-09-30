@@ -30,16 +30,17 @@ class Navbar extends React.Component{
 
     signout(){
         this.props.logout()
-        .then(()=>this.toggleLogout)
         .then(()=>this.props.history.push('/'))
     }
 
-    toggleLogout(){
+    toggleLogout(bool, e){
         // if true show logout div
-        this.setState({logoutDisplay : !this.state.logoutDisplay})
+        e.stopPropagation();
+        this.setState({logoutDisplay : bool})
     }
 
     toggleChat(bool, e){
+        // true => open chat box
         e.stopPropagation();
         this.setState({chatDisplay: bool})
     }
@@ -56,12 +57,12 @@ class Navbar extends React.Component{
         const {currentUser} = this.props
 
         if (this.state.logoutDisplay === true) {
-            logoutdisplay = (<div className="logoutContainer">
+            logoutdisplay = (<div onClick={(e) => this.toggleLogout(false, e)}className="logoutContainer">
                                 <div className="logoutDisplay">
                                     <div>
                                         @{currentUser.username}
                                     </div>
-                                    <button onClick={this.signout}>Log out @{currentUser.username} </button>
+                                    <button onClick={() => this.signout()}>Log out @{currentUser.username} </button>
                                 </div>
                             </div>)
         } else {<div></div>}
@@ -109,16 +110,13 @@ class Navbar extends React.Component{
                 {/* logout section */}
                 <div>
                     {logoutdisplay}
-                    <button className="sessionBtn" onClick={() => this.toggleLogout()}> 
+                    <button className="sessionBtn" onClick={(e) => this.toggleLogout(true, e)}> 
                                 <Avatar username={currentUser.username}/>
                                 <div style={{marginLeft: "5%", marginRight: "30%"}}>@{currentUser.username}</div> 
                                 <BsThreeDots /> 
                     </button>
                 </div>
-                
-
             </div>
-
         )
     }
 }
