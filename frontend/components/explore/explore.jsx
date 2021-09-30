@@ -27,6 +27,7 @@ class Explore extends React.Component{
                 <div className="exploreSelections">
                     {/* filter based on topics */}
                     <button onClick={()=> this.filterChats("")}>All</button>
+                    <button onClick={()=> this.filterChats("Technology")}>Technology</button>
                     <button onClick={()=> this.filterChats("Sports")}>Sports</button>
                     <button onClick={()=> this.filterChats("Finance")}>Finance</button>
                 </div>
