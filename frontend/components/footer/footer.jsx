@@ -38,8 +38,18 @@ class Footer extends React.Component{
 
                 {/* <button onClick={() => this.processSearch("million")}> search</button> */}
                 <h3> What's Trending? </h3>
-                <h5>ExplorationAwaits</h5>
-                <h5>What's For Dinner?</h5>
+                <div className="project">
+                    <h4>ExplorationAwaits</h4>
+                    <p>A full-stack web applicaiton which provides many capable and comfortable overland vehicles that can take you and your family/friends off the beaten path.</p>
+                    <a href="https://explorationawaits.herokuapp.com/" class="image" target="_blank" rel="noopener noreferrer"><img width="100%" src={"/explorationawaits.png"} alt="" /></a>
+                </div>
+
+                <div className="project">
+                    <h4>What's For Dinner?</h4>
+                    <p> A full-stack web application which offers a catalog of chefs and items for users to choose from.</p>
+                    <a href="https://explorationawaits.herokuapp.com/" class="image" target="_blank" rel="noopener noreferrer"><img width="100%" src={"/whatsfordinner.png"} alt="" /></a>
+                    
+                </div>
 
 
 
