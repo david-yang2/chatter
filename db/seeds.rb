@@ -117,7 +117,8 @@ Chat.destroy_all
     chat1 = Chat.create(
         body: "Imagine Tom playing 30 years in the league",
         author_id: user1.id,
-        topic: "Sports"
+        topic: "Sports",
+        imagepath: "/chats/espn1.png"
     )
 
     chat2 = Chat.create(
@@ -145,64 +146,77 @@ Chat.destroy_all
         \n
         If Djokovic claims his 21st major championship, where would he fall in the GOAT conversation?",
         author_id: user1.id,
-        topic: "Sports"
+        topic: "Sports",
+        imagepath: "/chats/espn2.png"
     )
     chat6 = Chat.create(
         body: "Working with Tree Data Structures: https://stackfull.dev/tree-data-structure-in-javascript (The basics of traversal both breadth first and depth first. Complete with visuals to help you get the ideas more quickly.)",
         author_id: user8.id,
-        topic: "Technology"
+        topic: "Technology",
+        imagepath: "/chats/javascriptdaily1.png"
     )
 
     chat7 = Chat.create(
-        body: "The College Football Show is here for Week 2 American football
+        body: "The first Rookie Rankings of the season are here! Memo 
+        @ESPNNFL
         \n
-        @jasonfitz and @HDouglas83 recap the early Saturday action, including No. 12 Oregon's win over No. 3 Ohio State, and get you ready for tonight's primetime showdown between Washington and Michigan.",
+        
+        (via @Jeff_Legwold )",
         author_id: user1.id,
-        topic: "Sports"
+        topic: "Sports",
+        imagepath: "/chats/espn3.png"
     )
 
     chat8 = Chat.create(
         body: "Money-market funds and other financial firms can now park up to $160 billion overnight each at the Federal Reserve Bank in New York’s reverse repurchase program, double what was allowed under the earlier cap.",
         author_id: user2.id,
-        topic: "Finance"
+        topic: "Finance",
+        imagepath: "/chats/marketwatch1.png"
     )
 
     chat9 = Chat.create(
         body: "The SpaceX flight taking four tourists on an extraterrestrial jaunt has also helped raise more than $130 million for children’s cancer research, and aims to bring in $200 million total.",
         author_id: user2.id,
-        topic: "Finance"
+        topic: "Finance",
+        imagepath: "/chats/marketwatch2.png"
     )
 
     chat10 = Chat.create(
         body:"We’ve seen a few questions about the status of Suspense in React 18. We have updated this roadmap issue to clarify what’s done, what’s coming in 18.0, and what’s coming after",
         author_id: user7.id,
-        topic: "Technology"
+        topic: "Technology",
+        imagepath: "/chats/react1.png"
     )
 
 
     chat11 = Chat.create(
         body: "Exxon Mobil, Chevron and ConocoPhillips are among companies failing to report all their tax payments despite being members of the Extractive Industries Transparency Initiative, the global anti-corruption body said Wednesday",
         author_id: user3.id,
-        topic: "Finance"
+        topic: "Finance",
+        imagepath: "/chats/bloomberg1.png"
+
     )
 
     chat12 = Chat.create(
         body:"We're working on a large-scale rearchitecture of React Native to make the framework more flexible and integrate better with native infrastructure in hybrid JavaScript/native apps.",
         author_id: user7.id,
-        topic: "Technology"
+        topic: "Technology",
+        imagepath: "/chats/react2.png"
     )
 
     chat13 = Chat.create(
         body: "Brazil’s central bank raises its benchmark interest rate by a full percentage point for a second straight meeting in an effort to control inflation that’s soaring toward double digits.",
         author_id: user3.id,
-        topic: "Finance"
+        topic: "Finance",
+        imagepath: "/chats/bloomberg2.png"
     )
 
 
     chat14 = Chat.create(
         body: "Today, we're excited to share the first early community preview of Concurrent Mode. It offers new composable primitives to help you orchestrate delightful user experiences.",
         author_id: user7.id,
-        topic: "Technology"
+        topic: "Technology",
+        imagepath: "/chats/react3.png"
     )
 
 
@@ -211,7 +225,8 @@ Chat.destroy_all
         \n
         Read the Big Take",
         author_id: user3.id,
-        topic: "Finance"
+        topic: "Finance",
+        imagepath: "/chats/bloomberg3.png"
     )
 
     chat16 = Chat.create(
@@ -222,7 +237,8 @@ Chat.destroy_all
     chat17 = Chat.create(
         body: "Resolving ‘tension’ between high inflation and still-elevated unemployment is the most urgent issue facing the U.S. Federal Reserve right now, Fed Chair Jerome Powell said, acknowledging the central bank's two goals are in potential conflict",
         author_id: user4.id,
-        topic: "Finance"
+        topic: "Finance",
+        imagepath: "/chats/reuters1.png"
     )
     
     chat18 = Chat.create(
@@ -234,18 +250,21 @@ Chat.destroy_all
     chat19 = Chat.create(
         body: "When it rains, it pours: A looming U.S. government shutdown adds to markets' unease, amid a hawkish shift by major central banks, signs of strain in China from a power crunch and problems at Evergrande. Latest from Marketmind",
         author_id: user4.id,
-        topic: "Finance"
+        topic: "Finance",
+        imagepath: "/chats/reuters2.png"
     )
 
     chat20 = Chat.create(
         body: "Avoiding climate disaster will depend largely on three things: reducing emissions and finding ways to remove carbon from the atmosphere, adapting to climate change; and getting the global politics right. Listen to “To a Lesser Degree”—our new podcast",
         author_id: user5.id,
-        topic: "Finance"
+        topic: "Finance",
+        imagepath: "/chats/theeconomist1.png"
     )
     chat21 = Chat.create(
         body: "Behind bond market’s muted response to Federal Reserve’s rate outlook may be a message for policy makers",
         author_id: user2.id,
-        topic: "Finance"
+        topic: "Finance",
+        imagepath: "/chats/marketwatch3.png"
     )
 
     chat22= Chat.create(
@@ -257,39 +276,45 @@ Chat.destroy_all
     chat23 = Chat.create(
         body: "Canelo Alvarez and Caleb Plant were talkin' spicy at their kickoff press conference",
         author_id: user10.id,
-        topic: "Sports"
+        topic: "Sports",
+        imagepath: "/chats/foxsports1.png"
     )
 
     chat24= Chat.create(
         body: "Here's everything Amazon announced this morning, from smart thermostats to security robots",
         author_id: user6.id,
-        topic: "Technology"
+        topic: "Technology",
+        imagepath:"/chats/techcrunch1.png"
     )
 
     chat25 = Chat.create(
         body:"How to Use `Promise.all()`: https://dmitripavlutin.com/promise-all/ (Handle multiple promises at once, in parallel, and then get the result in a single aggregate array.)",
         author_id: user8.id,
-        topic: "Technology"
+        topic: "Technology",
+        imagepath:"/chats/javascriptdaily2.png"
     )
 
 
     chat26 = Chat.create(
         body: "Don't forget, the React Conf CFP closes Monday! At React Conf we want to highlight what you're building with React—for your community, your family, your business. We'd love to hear and give a platform for your React Story",
         author_id: user7.id,
-        topic: "Technology"
+        topic: "Technology",
+        imagepath: "/chats/react4.png"
     )
 
 
     chat27 = Chat.create(
         body:"Rendering Magical Marbles with Three.js: https://tympanus.net/codrops/2021/08/02/magical-marbles-in-three-js/ (These sorts of 3D graphics tricks are a bit over my head, but it's neat to see how they're done.)",
         author_id: user8.id,
-        topic: "Technology"
+        topic: "Technology",
+        imagepath: "/chats/javascriptdaily3.png"
     )
 
     chat28 = Chat.create(
         body:"What an absolute emotional roller coaster of a race in Sochi on Sunday",
         author_id: user9.id,
-        topic: "Sports"
+        topic: "Sports",
+        imagepath: "/chats/formula1.png"
     )
 
     chat29 = Chat.create(
@@ -323,7 +348,8 @@ Chat.destroy_all
         \n
         He once trained for a fight by swimming upstream in a freezing river",
         author_id: user1.id,
-        topic: "Sports"
+        topic: "Sports",
+        imagepath: "/chats/espn4.png"
     )
 
 #likes
