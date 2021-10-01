@@ -47,7 +47,7 @@ class Footer extends React.Component{
                 <div className="project">
                     <h4>What's For Dinner?</h4>
                     <p> A full-stack web application which offers a catalog of chefs and items for users to choose from.</p>
-                    <a href="https://whats-for-dinner2.herokuapp.com/" target="_blank" rel="noopener noreferrer"><img width="100%" src={"/whatsfordinner.png"} alt="" /></a>
+                    <a href="https://whats-for-dinner-2.herokuapp.com/" target="_blank" rel="noopener noreferrer"><img width="100%" src={"/whatsfordinner.png"} alt="" /></a>
                     
                 </div>
 
