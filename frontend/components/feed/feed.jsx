@@ -62,6 +62,7 @@ class Feed extends React.Component{
                     {/* content */}
                 <div className="feedContent">
                     <div>{chat.body}</div>
+                    <img src={chat.imagepath} alt="" />
                     {likeButton}
                 </div>
             </div>
