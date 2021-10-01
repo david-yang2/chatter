@@ -338,7 +338,7 @@ Chat.destroy_all
     )
 
     chat32 = Chat.create(
-        body:'"Testing leads to failure, and failure leads to understanding." - Burt Rutan',
+        body:'"When something is important enough, you do it even if the odds are not in your favor" - Elon Musk',
         author_id: demouser.id,
         topic: "Technology"
     )
