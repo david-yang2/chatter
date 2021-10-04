@@ -6,20 +6,19 @@ import ExploreContainer from "./explore/explore_container"
 import HomeContainer from "./home/home_container"
 import ProfileContainer from "./profile/profile_container"
 import FooterContainer from "./footer/footer_container"
+// import {AuthRoute,
+//     ProtectedRoute} from "../util/route_api_util";
 
 
 const App = () => {
     return (
     <div className = 'app' id='app'>
-        <Route path="/" render={ ( props ) => ( props.location.pathname !== "/") && <NavbarContainer /> }/>
         <Route exact path="/" component = {Splash} />
+        <Route path="/" render={ ( props ) => ( props.location.pathname !== "/") && <NavbarContainer /> }/>
         <Route path="/home" component={HomeContainer} />
         <Route path="/explore" component={ExploreContainer} />
         <Route path="/profile" component={ProfileContainer} />
         <Route path="/" render={ ( props ) => ( props.location.pathname !== "/") && <FooterContainer /> }/>
-
-
-
     </div>
     )}
 
