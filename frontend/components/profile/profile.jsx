@@ -25,7 +25,6 @@ class Profile extends React.Component{
 
     render(){
         if (Object.values(this.props.user).length < 1) return null
-
         const {user} = this.props
 
         let display;

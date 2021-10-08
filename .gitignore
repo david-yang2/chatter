@@ -25,3 +25,9 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+
+
+#additional
+bundle.js
+bundle.js.map
+.DS_store

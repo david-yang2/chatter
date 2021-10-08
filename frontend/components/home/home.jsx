@@ -33,8 +33,7 @@ class Home extends React.Component{
     }
 
     render(){
-        if (!this.props.chats) return null
-
+        if (Object.values(this.props.chats).length<1) return null
         const {chats, currentUser} = this.props
         return(
             <div className="home">

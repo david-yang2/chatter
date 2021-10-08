@@ -19,7 +19,6 @@ class Explore extends React.Component{
 
     render(){
         if (Object.values(this.props.chats).length <1) return null
-
         const {chats} = this.props
         return (
             <div className="explore">

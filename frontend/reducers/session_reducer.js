@@ -14,7 +14,6 @@ const SessionReducer = (state = _nullSession, action) => {
 
         case RECEIVE_CURRENT_USER:
             return Object.assign({}, {currentUser: action.user});
-
         case LOG_OUT_CURRENT_USER:
             return _nullSession;
         default:

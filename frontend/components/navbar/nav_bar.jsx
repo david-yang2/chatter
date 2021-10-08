@@ -30,7 +30,6 @@ class Navbar extends React.Component{
 
     signout(){
         this.props.logout()
-        .then(()=>this.props.history.push('/'))
     }
 
     toggleLogout(bool, e){
@@ -103,10 +102,7 @@ class Navbar extends React.Component{
                     {/* {chatdisplay} */}
 
                 </div>
-
-                {/* username */}
-                {/* <h3>{this.props.currentUser}</h3> */}
-
+                
                 {/* logout section */}
                 <div>
                     {logoutdisplay}

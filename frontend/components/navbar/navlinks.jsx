@@ -6,7 +6,7 @@ const Navlinks = ({Icon, text}) => {
     return(
         <div className="navoptions">
             <Icon />
-            <Link to={{ pathname: `/${text}`}}>{text}</Link>
+            <Link to={{ pathname: `/${text.toLowerCase()}`}}>{text}</Link>
         </div>
     )
 
