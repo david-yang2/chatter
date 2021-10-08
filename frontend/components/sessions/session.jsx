@@ -23,16 +23,11 @@ class Session extends React.Component{
         e.preventDefault();
         // const {history} = this.props;
         this.props.action(this.state)
-        .then(()=> this.props.history.push(`/home`));
     }
 
     // allows user to use default login
     useDemoLogin(){
         this.props.action({username:"David", password:"DavidDemo"})
-        .then(()=> this.props.history.push(`/home`));
-        // this.props.history.push(`/home`)
-
-
     }
 
     // remember password validates the length of 6
@@ -90,8 +85,8 @@ class Session extends React.Component{
                                 onChange={this.handleInput('password')}
                             />
                             <div>
-                                <button onClick={this.handleSubmit}>Login</button>
-                                <button onClick={this.useDemoLogin}>Demo User</button>
+                                <button onClick={() => this.handleSubmit()}>Login</button>
+                                <button onClick={()=> this.useDemoLogin()}>Demo User</button>
                             </div>
                         </form>
                     </div>
