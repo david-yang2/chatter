@@ -19,12 +19,10 @@ class Session extends React.Component{
     }
 
     handleSubmit(e) {
-
         e.preventDefault();
         // const {history} = this.props;
         this.props.action(this.state)
     }
-
     // allows user to use default login
     useDemoLogin(){
         this.props.action({username:"David", password:"DavidDemo"})
