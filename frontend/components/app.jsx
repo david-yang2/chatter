@@ -20,6 +20,7 @@ const App = () => {
         if (path === "/") return <ProtectedRoute path="/" component={FooterContainer} />
     }
 
+    
     return (
         <div className = 'app' id='app'>
                 <AuthRoute exact path="/" component = {Splash} />
