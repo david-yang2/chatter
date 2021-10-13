@@ -352,6 +352,14 @@ Chat.destroy_all
         imagepath: "/chats/espn4.png"
     )
 
+    chat34 = Chat.create(
+        body: "Our next major release is React 18. It will include out-of-the-box improvements like automatic batching, new APIs like startTransition, and a new streaming server renderer with built-in support for React.lazy.",
+        author_id: user7.id,
+        topic: "Technology",
+    )
+
+
+
 #likes
 Like.destroy_all
 
@@ -433,4 +441,7 @@ Like.destroy_all
     like79 = Like.create(user_id: user16.id, chat_id: chat7.id)
     like80 = Like.create(user_id: user16.id, chat_id: chat11.id)
 
-    
+    like81 = Like.create(user_id: demouser.id, chat_id: chat34.id)
+    like82 = Like.create(user_id: user13.id, chat_id: chat34.id)
+    like83 = Like.create(user_id: user14.id, chat_id: chat34.id)
+    like84 = Like.create(user_id: user15.id, chat_id: chat34.id)
